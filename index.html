@@ -162,4 +162,53 @@ p{
 
 @keyframes sweep{
     0%{
-       
+        left:-15%;
+        opacity:0;
+    }
+    25%{
+        opacity:1;
+    }
+    100%{
+        left:106%;
+        opacity:0;
+    }
+}
+</style>
+
+</head>
+<body>
+
+<div class="wrap">
+    <h1 id="t">TERIMA KASIH</h1>
+    <p id="s">SUDAH MENONTON</p>
+</div>
+
+<script>
+function shimmer(){
+
+    ["t","s"].forEach((id,i)=>{
+
+        setTimeout(()=>{
+
+            const e=document.getElementById(id);
+
+            e.classList.remove("shimmer");
+            void e.offsetWidth;
+            e.classList.add("shimmer");
+
+        },i*250);
+
+    });
+
+    const next=20000+Math.random()*15000;
+    setTimeout(shimmer,next);
+
+}
+
+/* Shimmer pertama setelah teks tampil */
+setTimeout(shimmer,6000);
+
+</script>
+
+</body>
+</html>
